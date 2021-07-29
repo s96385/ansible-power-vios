@@ -1,0 +1,11 @@
+---
+- name: "motd UKHS"
+  hosts: all
+  gather_facts: yes
+  - name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: /srv/myfiles/foo.conf
+    dest: /etc/foo.conf
+    owner: root
+    group: root
+    mode: '0644'
